@@ -1,0 +1,22 @@
+// C++ code
+//
+int pir_sensor = 0;
+
+void setup()
+{
+  pinMode(11, INPUT);
+  Serial.begin(9600);
+  pinMode(7, OUTPUT);
+}
+
+void loop()
+{
+  pir_sensor = digitalRead(11);
+  Serial.println(pir_sensor);
+  if (pir_sensor == 1) {
+    digitalWrite(7, HIGH);
+    delay(2000); // Wait for 2000 millisecond(s)
+  } else {
+    digitalWrite(7, LOW);
+  }
+}
